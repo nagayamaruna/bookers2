@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2024_06_05_135909) do
     t.string "title"
     t.string "body"
     t.string "author"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
