@@ -1,2 +1,29 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="row">
+<div class="col-lg-5 mx-auto">
+<h1>User info</h1>
+<%= form_with model: @user, method: :patch do |f| %>
+
+
+<div class="form" style="margin-bottom: 20px;">
+<%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+</div>
+
+
+<div class="form" style="margin-bottom: 20px;">
+<%= f.label :image %> <br>
+  <%= f.file_field :image, placeholder: "ファイルを選択", accept: "image/*" %>
+</div>
+
+
+<div class="form" style="margin-bottom: 20px;">
+<%= f.label :introduction %> 
+  <%= f.text_area :introduction, class: "form-control"%>
+</div>
+
+
+<div class="form" style="margin-bottom: 20px;">
+  <%= f.submit "Update User", class: "btn btn-secondary" %>
+</div>
+<% end %>
+
