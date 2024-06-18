@@ -4,21 +4,21 @@
 <div class="col-3">
 <h2>User info</h2>
   
-  <p><%= image_tag user.get_image(100,100) %></p>
+  <p><%= image_tag @user.get_image(100,100) %></p>
 <table class="table">
   <tr>
     <th>
       name 
     </th>
     <th>
-      <%= user.name %>
+      <%= @user.name %>
     </tr>
   <tr>
     <th>
       introduction
     </th>
     <th>
-      <%= user.introduction %>
+      <%= @user.introduction %>
     </th>
   </tr>
 </table>
