@@ -1,5 +1,5 @@
 <div class="row">
-<div class="col-lg-5 mx-auto">
+<div class="col-sm-12 col-md-10 col-lg-6 px-5 px-sm-0 mx-auto">
 <h1>User info</h1>
 <%= form_with model: @user, method: :patch do |f| %>
 <% if @user.errors.any? %>
@@ -20,8 +20,8 @@
 
 
 <div class="form" style="margin-bottom: 20px;">
-<%= f.label :image %> <br>
-  <%= f.file_field :image, placeholder: "ファイルを選択", accept: "image/*" %>
+<%= f.label :profile_image %> <br>
+  <%= f.file_field :profile_image, placeholder: "ファイルを選択", accept: "image/*" %>
 </div>
 
 

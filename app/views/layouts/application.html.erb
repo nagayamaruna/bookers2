@@ -48,30 +48,24 @@
       </li>
       
     <% else %>
+      <ul class="navbar-nav ml-auto">
+
       <li class="nav-item">
-      <%= link_to "/", class: 'nav-link text-light active', 'aria-current': 'page' do %>
-      <i class="fa-solid fa-house"></i> Home
-      <% end %>
+      <%= link_to raw('<i class="fa-solid fa-house"></i> Home'), root_path, class: "nav-link text-light active", aria: { current: "page" } %>
       </li>
-      
+
       <li class="nav-item">
-      <%= link_to "/homes/about", class: 'nav-link text-light active', 'aria-current': 'page' do %>
-      <i class="fa-solid fa-link"></i> About
-      <% end %>
+      <%= link_to raw('<i class="fa-solid fa-link"></i> About'), "/home/about", class: "nav-link text-light active", aria: { current: "page" } %>
       </li>
-      
+
       <li class="nav-item">
-      <%= link_to new_user_registration_path, class: 'nav-link text-light active', 'aria-current': 'page' do %>
-      <i class="fa-solid fa-user-plus"></i> Sign up
-      <% end %>
+      <%= link_to raw('<i class="fa-solid fa-user-plus"></i> Sign up'), new_user_registration_path, class: "nav-link text-light active", aria: { current: "page" } %>
       </li>
-      
+
       <li class="nav-item">
-      <%= link_to new_user_session_path, class: 'nav-link text-light active', 'aria-current': 'page' do %>
-      <i class="fa-solid fa-right-to-bracket"></i> Log in
-      <% end %>
+      <%= link_to raw('<i class="fa-solid fa-right-to-bracket"></i> Log in'), new_user_session_path, class: "nav-link text-light active", aria: { current: "page" } %>
       </li>
-      
+      </ul>
     
     <% end %>  
       </ul>

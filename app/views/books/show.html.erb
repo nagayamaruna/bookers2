@@ -9,7 +9,7 @@
   <table class="table">
     <tr>
       <td>
-        <%= link_to book_path(@bookshow.id) do %><%= image_tag @user.image %><br><%= @bookshow.user.name %><% end %>
+        <%= link_to user_path(@bookshow) do %><%= image_tag @bookshow.user.get_image(100,100) %><br><%= @bookshow.user.name %><% end %>
       </td>
       <td>
         <%= link_to @bookshow.title, book_path(@bookshow.id) %>
