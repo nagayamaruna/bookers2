@@ -33,7 +33,13 @@ class BooksController < ApplicationController
   
   def edit
     @book = Book.find(params[:id])
-    @user = current_user
+    unless current_user
+      redirect_to auth_login_path
+    end
+    unless current_user.id == @book.user_id
+      flash[:error] = "あなたはこの投稿を編集できません。"
+      redirect_to "/books"
+    end
   end
   
   def update
@@ -58,4 +64,10 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body)
   end  
+  
+  def correct_user
+    @book = Book.find(params[:id])
+    @user = @book.user
+    redirect_to(books_path) unless @user == current_user
+  end
 end
